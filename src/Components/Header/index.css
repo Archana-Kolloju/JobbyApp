@@ -1,0 +1,40 @@
+.nav-bar {
+  background-color: #202020;
+  height: 17vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 62px;
+  width: 177px;
+  margin-left: 39px;
+}
+.menu-con {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+.nav-link {
+  text-decoration: none;
+}
+
+.select {
+  color: #f1f5f9;
+  font-size: 22px;
+  font-weight: 500;
+  padding-right: 17px;
+}
+.logout-btn {
+  cursor: pointer;
+  background-color: #6366f1;
+  height: 43px;
+  width: 143px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 39px;
+}
