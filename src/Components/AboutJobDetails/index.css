@@ -2,18 +2,19 @@
   margin: 0;
 }
 
-.bout-job-con {
+.about-job-container {
+  margin: 0;
   background-color: #000000;
   min-height: 197vh;
 }
 .job-items-con {
   border-radius: 12px;
   background-color: #202020;
-  margin-top: 23px;
-  margin-bottom: 33px;
+  padding-top: 23px;
+  padding-bottom: 33px;
   padding-left: 33px;
   padding-top: 12px;
-  margin: 33px;
+  padding: 33px;
   padding-bottom: 97px;
 }
 

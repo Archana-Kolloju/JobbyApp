@@ -67,7 +67,7 @@ class AboutJobDetails extends Component {
       const updatedSimilarJobDetailsData = data.similar_jobs.map(eachItem => ({
         companyLogoUrl: eachItem.company_logo_url,
         employmentType: eachItem.employment_type,
-        id: data.id,
+        id: eachItem.id,
         jobDescription: eachItem.job_description,
         location: eachItem.location,
         rating: eachItem.rating,
@@ -231,10 +231,10 @@ class AboutJobDetails extends Component {
 
   render() {
     return (
-      <div className="bout-job-con">
+      <>
         <Header />
-        {this.renderJobDetails()}
-      </div>
+        <div className="bout-job-con">{this.renderJobDetails()}</div>
+      </>
     )
   }
 }

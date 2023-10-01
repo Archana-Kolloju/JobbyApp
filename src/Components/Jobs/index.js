@@ -81,7 +81,7 @@ class Jobs extends Component {
   onChangeCheckboxInput = event => {
     const {checkBoxInputs} = this.state
     const inputNotInList = checkBoxInputs.filter(
-      eachItem => eachItem === eachItem.target.id,
+      eachItem => eachItem === event.target.id,
     )
     if (inputNotInList.length === 0) {
       this.setState(
@@ -128,6 +128,7 @@ class Jobs extends Component {
 
       this.setState({
         profileDetails: profileDataList,
+        responseSuccess: true,
         apiStatus: apiStatusConstants.success,
       })
     } else {
@@ -211,7 +212,7 @@ class Jobs extends Component {
       <button
         type="button"
         className="failure-button"
-        onClick={this.onGetProfileDetails()}
+        onClick={this.onGetProfileDetails}
       >
         Retry
       </button>
@@ -249,8 +250,8 @@ class Jobs extends Component {
   getJobFailureView = () => (
     <div className="no-jobs-con">
       <img
-        src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
-        alt="no jobs"
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
         className="no-job-img"
       />
       <h1 className="no-job-heading">OOPS! Something Went Wrong</h1>
@@ -260,7 +261,7 @@ class Jobs extends Component {
       <button
         type="button"
         className="failure-button"
-        onClick={this.getJobItemsList()}
+        onClick={this.getJobItemsList}
       >
         Retry
       </button>
@@ -306,7 +307,7 @@ class Jobs extends Component {
           <div className="profile-employment-section">
             {this.renderProfileStatus()}
             <hr />
-            <div className="employment-section">
+            <ul className="employment-section">
               <h1 className="employment-heading">Type of Employment</h1>
 
               {employmentTypesList.map(eachType => (
@@ -326,9 +327,9 @@ class Jobs extends Component {
                   </label>
                 </li>
               ))}
-            </div>
+            </ul>
 
-            <div className="employment-section">
+            <ul className="employment-section">
               <h1 className="employment-heading">Salary Range</h1>
 
               {salaryRangesList.map(eachSalary => (
@@ -348,7 +349,7 @@ class Jobs extends Component {
                   </label>
                 </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div className="job-details-con">
@@ -356,7 +357,7 @@ class Jobs extends Component {
               <input
                 type="search"
                 className="search-bar"
-                placeholder="Search"
+                placeholder="search"
                 onChange={this.onGetSearchInput}
                 onKeyDown={this.onEnterSearchInput}
                 value={searchInput}
@@ -365,12 +366,12 @@ class Jobs extends Component {
                 className="search-icon-btn"
                 type="button"
                 data-testid="searchButton"
-                onSubmit={this.onSubmitSearchInput}
+                onClick={this.onSubmitSearchInput}
               >
                 <BsSearch size="24" color="#cbd5e1" />
               </button>
             </div>
-            {this.renderJobStatus()}
+            <ul>{this.renderJobStatus()}</ul>
           </div>
         </div>
       </>
